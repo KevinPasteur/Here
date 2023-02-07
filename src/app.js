@@ -1,9 +1,9 @@
 import User from "./modules/User.js";
 
 const listUsers = [];
+
 const main = document.querySelector("main");
 const elementFilters = document.querySelector(".filters");
-var countPresent = 0;
 
 const getUsers = async () => {
   const response = await fetch(`https://randomuser.me/api/?results=20`);

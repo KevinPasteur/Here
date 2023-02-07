@@ -1,3 +1,5 @@
+import { countPresent, updateCount } from "./utils.js";
+
 class User {
   title;
   firstname;
@@ -51,6 +53,12 @@ class User {
   }
 
   #toggleIsPresent() {
+    if (!this.isPresent) updateCount(1);
+    else updateCount(-1);
+
+    document.querySelector(
+      ".counter"
+    ).textContent = `${countPresent}/20 people are here`;
     this.isPresent = !this.isPresent;
     this.element.dataset.present = this.isPresent;
   }
